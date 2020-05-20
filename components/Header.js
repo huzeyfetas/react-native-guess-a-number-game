@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import Color from '../constant/color';
 
 const Header = props => {
   return (
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
     width: '100%', //bu 100 de 100 vermek aklıma gelmiyor FIXME:
     height: 90,
     paddingTop: 36,
-    backgroundColor: '#f7287b',
+    backgroundColor: Color.primary,
     alignItems: 'center',
     justifyContent: 'center',
   },
