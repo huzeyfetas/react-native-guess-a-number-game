@@ -1,6 +1,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
+// You could use this card component in everywhere. just copy and paste it
+
 const Card = props => {
   return <View style={{...props.style, ...styles.card}}>{props.children}</View>;
 };
@@ -12,6 +14,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
+    //elevation is for android shadow
     elevation: 8,
     shadowOpacity: 0.25,
     shadowRadius: 6,
