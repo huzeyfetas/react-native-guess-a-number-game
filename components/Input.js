@@ -5,8 +5,6 @@ const Input = props => {
   return <TextInput {...props} style={{...styles.input, ...props.style}} />;
 };
 
-export default Input;
-
 const styles = StyleSheet.create({
   input: {
     height: 40,
@@ -15,3 +13,5 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 });
+
+export default Input;

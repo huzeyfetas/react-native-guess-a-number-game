@@ -57,9 +57,7 @@ const StartGameScreen = props => {
           <NumberContainer>{selectedNumber}</NumberContainer>
           <Button
             title="START GAME"
-            onPress={() => {
-              console.warn('game will starting w8');
-            }}
+            onPress={() => props.onStartGame(selectedNumber)}
           />
         </Card>
       </View>

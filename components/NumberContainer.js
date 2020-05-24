@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     justifyContent: 'center',
     //alingSelft blocked parent cont.'s style
-    alignSelf: 'stretch',
+    //alignSelf: 'stretch',
     alignItems: 'center',
   },
   number: {
