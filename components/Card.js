@@ -4,7 +4,7 @@ import {StyleSheet, View} from 'react-native';
 // You could use this card component in everywhere. just copy and paste it
 
 const Card = props => {
-  return <View style={{...props.style, ...styles.card}}>{props.children}</View>;
+  return <View style={{...styles.card, ...props.style}}>{props.children}</View>;
 };
 
 const styles = StyleSheet.create({

@@ -16,6 +16,11 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* guessNumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* guessNumberTests.m */; };
+		1C4F58AC3B614D5A914FAF5E /* Courgette-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49419966E39F408ABC5D2889 /* Courgette-Regular.ttf */; };
+		D6DED7299051484FA1508247 /* CaveatBrush-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AAF9E2858CD4799A95D1EAA /* CaveatBrush-Regular.ttf */; };
+		A17DBA2882A241009FE0C195 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9B9233F9F4447EBB047717C /* OpenSans-Bold.ttf */; };
+		CA60E5D26C6D4943898042D3 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 510D9FD565A5450C82EEA06D /* OpenSans-Regular.ttf */; };
+		FEF3CCA1F2E847D9B728DD3F /* Rancho-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE70472ACB9048C7A7298A44 /* Rancho-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		2D02E4901E0B4A5D006451C7 /* guessNumber-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guessNumber-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		49419966E39F408ABC5D2889 /* Courgette-Regular.ttf */ = {isa = PBXFileReference; name = "Courgette-Regular.ttf"; path = "../assets/fonts/Courgette-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3AAF9E2858CD4799A95D1EAA /* CaveatBrush-Regular.ttf */ = {isa = PBXFileReference; name = "CaveatBrush-Regular.ttf"; path = "../assets/fonts/CaveatBrush-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C9B9233F9F4447EBB047717C /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		510D9FD565A5450C82EEA06D /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EE70472ACB9048C7A7298A44 /* Rancho-Regular.ttf */ = {isa = PBXFileReference; name = "Rancho-Regular.ttf"; path = "../assets/fonts/Rancho-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +150,7 @@
 				00E356EF1AD99517003FC87E /* guessNumberTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				E7ED6ABCE646497889CFE745 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -156,6 +167,19 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		E7ED6ABCE646497889CFE745 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				49419966E39F408ABC5D2889 /* Courgette-Regular.ttf */,
+				3AAF9E2858CD4799A95D1EAA /* CaveatBrush-Regular.ttf */,
+				C9B9233F9F4447EBB047717C /* OpenSans-Bold.ttf */,
+				510D9FD565A5450C82EEA06D /* OpenSans-Regular.ttf */,
+				EE70472ACB9048C7A7298A44 /* Rancho-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -295,6 +319,11 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				1C4F58AC3B614D5A914FAF5E /* Courgette-Regular.ttf in Resources */,
+				D6DED7299051484FA1508247 /* CaveatBrush-Regular.ttf in Resources */,
+				A17DBA2882A241009FE0C195 /* OpenSans-Bold.ttf in Resources */,
+				CA60E5D26C6D4943898042D3 /* OpenSans-Regular.ttf in Resources */,
+				FEF3CCA1F2E847D9B728DD3F /* Rancho-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

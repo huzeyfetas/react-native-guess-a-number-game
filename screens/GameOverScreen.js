@@ -1,12 +1,15 @@
 import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
+import Dstyles from '../constant/default-styles';
 
 const GameOverScreen = props => {
   return (
     <View style={styles.screen}>
-      <Text>GAME OVER SCREEN</Text>
-      <Text>Number of rounds : {props.roundsNumber} </Text>
-      <Text>User's Number : {props.userNumber} </Text>
+      <Text style={Dstyles.header}>GAME OVER SCREEN</Text>
+      <Text style={Dstyles.title}>
+        Number of rounds : {props.roundsNumber}{' '}
+      </Text>
+      <Text style={Dstyles.titleBold}>User's Number : {props.userNumber} </Text>
       <Button title="NEW GAME" onPress={props.onRestart} />
     </View>
   );

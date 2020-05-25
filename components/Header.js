@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     color: 'black',
-    fontSize: 18,
+    fontSize: 32,
+    fontFamily: 'Courgette-Regular',
   },
 });
 
