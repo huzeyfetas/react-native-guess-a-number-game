@@ -10,9 +10,15 @@ const App: () => React$Node = () => {
   const [guessRounds, setGuessRounds] = useState(0);
 
   //----------------------------------FUNCTIONS
+
+  const configureNewGameHandler = () => {
+    setGuessRounds(0);
+    setUserNumber(null);
+  };
+
   const startGameHandler = selectedNumber => {
     setUserNumber(selectedNumber);
-    setGuessRounds(0);
+    //setGuessRounds(0);
   };
 
   const gameOverHandler = numOfRounds => {
@@ -26,7 +32,13 @@ const App: () => React$Node = () => {
       <GameScreen userChoise={userNumber} onGameOver={gameOverHandler} />
     );
   } else if (guessRounds > 0) {
-    content = <GameOverScreen />;
+    content = (
+      <GameOverScreen
+        roundsNumber={guessRounds}
+        userNumber={userNumber}
+        onRestart={configureNewGameHandler}
+      />
+    );
   }
 
   // ++++++++++++++++++++++++++++++++++ RETURN
@@ -42,7 +54,7 @@ const App: () => React$Node = () => {
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: '#F1CBF8',
+    backgroundColor: '#fff',
     flex: 1,
   },
 });
