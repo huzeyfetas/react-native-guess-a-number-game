@@ -1,7 +1,18 @@
 import React, {useState, useRef, useEffect} from 'react';
-import {StyleSheet, Text, View, Button, Alert} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Alert,
+  ScrollView,
+  FlatList,
+} from 'react-native';
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
+import MainButton from '../components/MainButton';
+import BodyText from '../components/BodyText';
+//import Icon from 'react-native-elements';
 
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
@@ -14,12 +25,29 @@ const generateRandomBetween = (min, max, exclude) => {
   }
 };
 
-const GameScreen = props => {
-  const [currentGuess, setCurrentGuess] = useState(
-    generateRandomBetween(1, 100, props.userChoise),
+const renderListItem = (listLength, itemData) => {
+  return (
+    <View style={styles.listItem}>
+      <BodyText style={styles.fontSizeFromGameScreenProp}>
+        {' '}
+        {listLength - itemData.index}. guess is{' '}
+      </BodyText>
+      <BodyText style={styles.fontSizeFromGameScreenProp}>
+        {' '}
+        {itemData.item}{' '}
+      </BodyText>
+    </View>
   );
+};
 
-  const [rounds, setRounds] = useState(0);
+// -------->>>>>>>>>>>>>>>>>>>>> COMPONENT
+
+const GameScreen = props => {
+  const initialGuess = generateRandomBetween(1, 100, props.userChoise);
+
+  const [currentGuess, setCurrentGuess] = useState(initialGuess);
+  const [pastGuesses, setPastGuesses] = useState([initialGuess.toString()]);
+
   const currentLow = useRef(1);
   const currentHigh = useRef(100);
 
@@ -27,9 +55,9 @@ const GameScreen = props => {
 
   useEffect(() => {
     if (currentGuess === userChoise) {
-      onGameOver(rounds);
+      onGameOver(pastGuesses.length);
     }
-  }, [currentGuess, userChoise, onGameOver, rounds]);
+  }, [currentGuess, userChoise, onGameOver, pastGuesses.length]);
 
   const nextGuessHandler = direction => {
     if (
@@ -45,7 +73,7 @@ const GameScreen = props => {
     if (direction === 'lower') {
       currentHigh.current = currentGuess;
     } else {
-      currentLow.current = currentGuess;
+      currentLow.current = currentGuess + 1;
     }
 
     const nextNumber = generateRandomBetween(
@@ -54,7 +82,11 @@ const GameScreen = props => {
       currentGuess,
     );
     setCurrentGuess(nextNumber);
-    setRounds(curRounds => curRounds + 1);
+    //setRounds(curRounds => curRounds + 1); //bu aslında count sayıyor
+    setPastGuesses(curPastGuesses => [
+      nextNumber.toString(),
+      ...curPastGuesses,
+    ]);
   };
 
   return (
@@ -62,12 +94,28 @@ const GameScreen = props => {
       <Text>Opponent's guess</Text>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card style={styles.buttonContainer}>
-        <Button title="Lower" onPress={nextGuessHandler.bind(this, 'lower')} />
-        <Button
-          title="Greater"
-          onPress={nextGuessHandler.bind(this, 'greather')}
-        />
+        <MainButton onPress={nextGuessHandler.bind(this, 'lower')}>
+          Lower
+        </MainButton>
+        <MainButton onPress={nextGuessHandler.bind(this, 'greather')}>
+          {/* <Icon name="rowing" /> */} Greather
+        </MainButton>
       </Card>
+      <View style={styles.listContainer}>
+        {/* <ScrollView contentContainerStyle={styles.list}>
+          {pastGuesses.map((guess, index) =>
+            renderListItem(guess, pastGuesses.length - index),
+          )}
+        </ScrollView> */}
+        <FlatList
+          keyExtractor={item => item}
+          data={pastGuesses}
+          renderItem={renderListItem.bind(this, pastGuesses.length)}
+          contentContainerStyle={styles.list}
+          showsVerticalScrollIndicator={false}
+          // showsVerticalScrollIndicator={false} for hidden scroll
+        />
+      </View>
     </View>
   );
 };
@@ -85,6 +133,30 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: 300,
     maxWidth: '80%',
+  },
+  listContainer: {
+    width: '60%',
+    flex: 1,
+  },
+  list: {
+    flexGrow: 1,
+    justifyContent: 'flex-end',
+    //alignItems: 'center',
+  },
+  listItem: {
+    borderRadius: 25,
+    borderWidth: 2,
+    borderColor: '#aeaeae',
+    padding: 7,
+    marginVertical: 15,
+    backgroundColor: '#ffffee',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    width: '100%',
+    //fontSize: 15,
+  },
+  fontSizeFromGameScreenProp: {
+    fontSize: 18,
   },
 });
 
